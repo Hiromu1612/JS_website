@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Raleway","Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    font-display: swap; /*Webフォントが読み込まれるまでフォールバックフォントで表示し、読み込まれた時点で置き換える*/
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* App.vue */
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./background-image.jpg") center center no-repeat;
+    background-size: cover; /*背景画像をコンテナいっぱいに表示*/
+}
+
+.container {
+    width: 50vw;
+    border: 1px solid #ffffff56;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(20px); /*背景をぼかす*/
+    box-shadow: 4px 4px 13px 5px rgba(0,0,0,0.25); /*影をつける*/
+}
+
+/*画面の幅が700ピクセル以下のスマホサイズ*/
+@media only screen and (max-width: 700px) {
+    .container{
+        width: 80vw;
+    }
+}
+
+/* Title.vue */
+h1 {
+    font-weight: 400; /*フォントの太さ デフォルトは400*/
+    margin: 0 0 50px; /*上下左右のマージン (上0px 右0px 下50px 左0px)*/
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+/* Form.vue */
+input[type="text"] {
+    background-color: transparent; /*背景色を透明にする*/
+    border: 0; /*枠線を消す*/
+    border-bottom: solid 1px #5651f1; /*下線を引く*/
+    font-size: 20px;
+    width: 40%;
+    padding-bottom: 4px; /*下線と文字の間隔*/
+    color: #000000fc !important; /*文字色を白にする importantは優先度を上げる*/
+    margin-bottom: 30px; /*下マージン*/
+    margin-right: 20px; /*右マージン*/
+    font-weight: lighter; /*フォントの太さ lighterはデフォルトより軽い*/
+}
+
+button {
+    background-color: #5651f1;
+    color: #fff;
+    padding: 8px 20px;
+    border: 0;
+    width: 40%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 2px;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    opacity: 0.6; /*透明度を下げる*/
+}
+
+*:focus {
+    outline: none; /*フォーカス時の枠線を消す*/
+}
+
+
+/* Results.vue */
+.results-country {
+    font-size: 4rem; /*親要素はbodyなので1.6rem*/
+    margin-bottom: 4px;
+}
+
+.results-city {
+    font-size: 2.3rem;
+}
+
+.results-temp {
+    font-size: 6rem;
+    color: #5651f1;
+}
+
+.results-temp > span {
+    font-size: 3rem;
+    color: #333;
+}
+
+/* Loading.vue */
